@@ -1,3 +1,4 @@
+#!/usr/bin/python
 '''
 Counts the number of words in a given sentence. For our purposes, a 'word' is
 any sequence of non-whitespace characters.

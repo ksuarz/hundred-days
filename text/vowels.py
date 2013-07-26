@@ -1,3 +1,4 @@
+#!/usr/bin/python
 '''
 Counts the number of vowels in a string.
 '''

@@ -1,3 +1,4 @@
+#!/usr/bin/python
 '''
 Checks if a given word or sentence is a palindrome. Whitespace is ignored
 for the purposes of this program.

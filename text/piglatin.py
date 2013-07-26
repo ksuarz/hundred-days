@@ -1,3 +1,4 @@
+#!/usr/bin/python
 '''
 Converts words to pig latin. This is a very naive implementation. All
 non-alphanumeric, non-whitespace characters are treated as part of a word.
