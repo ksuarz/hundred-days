@@ -17,18 +17,28 @@ def validate(dic):
     '''
     for opt, is_valid in dic.iteritems():
         value, name = opt
-        if not is_valid(var):
-            sys.stderr.write(
-                    'cipher.py: {0} is not valid for option {1}.'.format(
-                        value, name)
+        if not is_valid(value):
+            sys.stderr.write('{0}: {1} is not valid for option {2}.'.format(
+                'cipher.py', value, name))
             sys.exit(1)
+
 
 def encrypt(key=0, text=None):
     '''
     Encrypts the text using the Caesarian cipher.
     '''
-    rot = lambda x, k: chr(ord(x) + k % 26)
-    str = [ord(c) for c in text]
+    text, modulus = text.lower(), ord('a') + 26
+    rot = lambda x, k: chr(ord(x) + k % modulus)
+    return ''.join(rot)
+
+
+def decrypt(key=0, text=None):
+    '''
+    Decrypts the text using the Caesarian cipher.
+    '''
+    text, modulus = text.lower(), ord('a') + 26
+    rot = lambda x, k: chr(ord(x) + k % modulus)
+    return ''.join(rot)
 
 
 if __name__ == '__main__':
@@ -44,18 +54,16 @@ if __name__ == '__main__':
 
     # The other options and arguments
     parser.add_argument(
-        'text'
+        'text',
         help='The text to encrypt or decrypt.')
     parser.add_argument(
-        '-k',
-        '--key',
+        'key',
         type=int,
-        help='The numeric key to use (0 and 25, inclusive).',
-        required=True)
+        help='The numeric key to use (0 and 25, inclusive).')
 
     args = parser.parse_args().__dict__
 
-    # TODO: future support for other ciphers
+#    # TODO: future support for other ciphers
 #    parser.add_argument(
 #        '-t',
 #        '--type',
