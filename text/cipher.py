@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 '''
 Allows you to encrypt or decrypt text using the simple Caesar cipher.
 '''

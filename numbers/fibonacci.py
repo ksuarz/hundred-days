@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 '''
 Calculates the Fibonacci sequence to an arbitrary number of digits.
 '''

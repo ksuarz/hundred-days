@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 '''
 Checks if a given word or sentence is a palindrome. Whitespace is ignored
 for the purposes of this program.

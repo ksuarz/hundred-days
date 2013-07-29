@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 '''
 Counts the number of words in a given sentence. For our purposes, a 'word' is
 any sequence of non-whitespace characters.
