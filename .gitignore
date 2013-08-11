@@ -36,3 +36,6 @@ nosetests.xml
 
 # Swap files
 *.sw[op]
+
+# Our clean-up script
+clean
