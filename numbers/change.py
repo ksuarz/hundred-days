@@ -23,7 +23,7 @@ else:
     amounts = [100, 50, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01]
     change = []
     while target != 0:
-    for amt in amounts:
-        x = paid / 
-        change.append()
+        for amt in amounts:
+            x = paid / 
+            change.append()
         

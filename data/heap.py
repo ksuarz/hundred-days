@@ -34,7 +34,7 @@ class Heap():
             self.heap = []
         else:
             self.heap = list[:]
-            for i in xrange(n/2 - 1, -1, -1):
+            for i in xrange(len(list)/2 - 1, -1, -1):
                 self._siftdown(i) 
 
 
@@ -82,7 +82,7 @@ class Heap():
         array indices at the expense of O(n) extra space.
         '''
         index = -1
-        for i in xrange(0, len(self.heap))
+        for i in xrange(0, len(self.heap)):
             if data == self.heap[i]:
                 index = i
                 break
@@ -95,8 +95,12 @@ class Heap():
             tail = self.heap.pop()
             self.heap[index] = tail
 
-            # Finally, sift it up or down. TODO
-            pass
+            # Finally, sift it up or down.
+            if self.heap[index] < self.heap[(index-1) / 2]:
+                # It's less than its parent; sift it up
+                self._siftup(index)
+            else:
+                self._siftdown(index)
             return object
         else:
             return None
@@ -115,11 +119,11 @@ class Heap():
             left, right = 2*index + 1, 2*index + 2
             if left <= end and self.heap[index] > self.heap[left]:
                 self.heap[index], self.heap[left] = (self.heap[left],
-                        self.heap[index]
+                        self.heap[index])
                 index = left
             elif right <= end and self.heap[index] > self.heap[right]:
                 self.heap[index], self.heap[right] = (self.heap[right],
-                        self.heap[index]
+                        self.heap[index])
                 index = right
             else:
                 break
@@ -132,4 +136,10 @@ class Heap():
         invariant. We can iteratively swap it upwards with its parent (and its
         parent's parent) until it can no longer go up.
         '''
-        while index > 0 and index < 
+        # Validity check
+        if index >= 0 and index < self.size:
+            parent = (index-1) / 2
+            while index > 0 and self.heap[index] < self.heap[parent]:
+                self.heap[index], self.heap[parent] = (self.heap[parent],
+                        self.heap[index])
+                index, parent = parent, (index-1) / 2
