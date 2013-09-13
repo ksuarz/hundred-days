@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 '''
 A simple implementation of a binary search tree. It supports all of the basic
 operations - search, add, and delete. With the naive implementation, the tree
